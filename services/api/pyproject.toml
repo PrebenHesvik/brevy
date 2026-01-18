@@ -19,6 +19,9 @@ dependencies = [
     "authlib>=1.4.0",
     "httpx>=0.28.0",
     "python-jose[cryptography]>=3.3.0",
+    "itsdangerous>=2.2.0",
+    # Email validation for Pydantic
+    "email-validator>=2.2.0",
     # Caching & Messaging
     "redis>=5.2.0",
     # Rate Limiting

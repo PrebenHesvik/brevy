@@ -308,63 +308,63 @@ brevy/
 
 **2.3 OAuth Implementation**
 
-- [ ] Register GitHub OAuth application
-- [ ] Register Google OAuth application
-- [ ] Implement `/api/v1/auth/github` login redirect
-- [ ] Implement `/api/v1/auth/github/callback` handler
-- [ ] Implement `/api/v1/auth/google` login redirect
-- [ ] Implement `/api/v1/auth/google/callback` handler
-- [ ] Implement `/api/v1/auth/logout` endpoint
-- [ ] Implement `/api/v1/auth/me` (get current user)
+- [x] Register GitHub OAuth application (see docs/OAUTH_SETUP.md)
+- [x] Register Google OAuth application (see docs/OAUTH_SETUP.md)
+- [x] Implement `/api/v1/auth/github` login redirect
+- [x] Implement `/api/v1/auth/github/callback` handler
+- [x] Implement `/api/v1/auth/google` login redirect
+- [x] Implement `/api/v1/auth/google/callback` handler
+- [x] Implement `/api/v1/auth/logout` endpoint
+- [x] Implement `/api/v1/auth/me` (get current user)
 
 **2.4 Link Model & CRUD**
 
-- [ ] Create Link SQLAlchemy model
-- [ ] Create Link Pydantic schemas
-- [ ] Implement `POST /api/v1/links` - create short link
-- [ ] Implement `GET /api/v1/links` - list user's links (paginated)
-- [ ] Implement `GET /api/v1/links/{id}` - get single link
-- [ ] Implement `PATCH /api/v1/links/{id}` - update link
-- [ ] Implement `DELETE /api/v1/links/{id}` - soft delete link
-- [ ] Implement `GET /api/v1/links/{id}/analytics` - proxy to analytics service
-- [ ] Add URL validation (valid URL format, not blocked domain)
+- [x] Create Link SQLAlchemy model
+- [x] Create Link Pydantic schemas
+- [x] Implement `POST /api/v1/links` - create short link
+- [x] Implement `GET /api/v1/links` - list user's links (paginated)
+- [x] Implement `GET /api/v1/links/{id}` - get single link
+- [x] Implement `PATCH /api/v1/links/{id}` - update link
+- [x] Implement `DELETE /api/v1/links/{id}` - soft delete link
+- [x] Implement `GET /api/v1/links/{id}/analytics` - proxy to analytics service
+- [x] Add URL validation (valid URL format, not blocked domain)
 
 **2.5 Short Code Generation**
 
-- [ ] Implement random short code generator (base62, 6-8 chars)
-- [ ] Implement custom slug validation (allowed chars, length, uniqueness)
-- [ ] Handle collision detection and retry
+- [x] Implement random short code generator (base62, 6-8 chars)
+- [x] Implement custom slug validation (allowed chars, length, uniqueness)
+- [x] Handle collision detection and retry
 
 **2.6 Redirect Endpoint**
 
-- [ ] Implement `GET /{short_code}` redirect
-- [ ] Add Redis caching for lookups
-- [ ] Handle cache miss → DB lookup → cache set
-- [ ] Handle expired links (return 410 Gone)
-- [ ] Handle inactive links (return 404)
-- [ ] Implement cache invalidation on link update/delete
+- [x] Implement `GET /{short_code}` redirect
+- [x] Add Redis caching for lookups
+- [x] Handle cache miss → DB lookup → cache set
+- [x] Handle expired links (return 410 Gone)
+- [x] Handle inactive links (return 404)
+- [x] Implement cache invalidation on link update/delete
 
 **2.7 Click Event Publishing**
 
-- [ ] Set up Redis Pub/Sub publisher
-- [ ] Publish click event on every redirect (async, non-blocking)
-- [ ] Include: link_id, timestamp, referrer, user_agent, IP
+- [x] Set up Redis Pub/Sub publisher
+- [x] Publish click event on every redirect (async, non-blocking)
+- [x] Include: link_id, timestamp, referrer, user_agent, IP
 
 **2.8 Security & Rate Limiting**
 
-- [ ] Configure CORS middleware (allowed origins)
-- [ ] Add security headers middleware
-- [ ] Implement rate limiting with slowapi
-- [ ] Rate limit: redirect endpoint (high limit)
-- [ ] Rate limit: create link endpoint (lower limit)
+- [x] Configure CORS middleware (allowed origins)
+- [x] Add security headers middleware
+- [x] Implement rate limiting with slowapi
+- [x] Rate limit: redirect endpoint (high limit)
+- [x] Rate limit: create link endpoint (lower limit)
 
 **2.9 Observability - API Service**
 
-- [ ] Set up structlog for JSON logging
-- [ ] Add request ID middleware (trace requests)
-- [ ] Set up OpenTelemetry tracing
-- [ ] Add Prometheus metrics endpoint
-- [ ] Integrate Sentry for error tracking
+- [x] Set up structlog for JSON logging
+- [x] Add request ID middleware (trace requests)
+- [x] Set up OpenTelemetry tracing
+- [x] Add Prometheus metrics endpoint
+- [x] Integrate Sentry for error tracking
 
 ---
 
