@@ -27,7 +27,7 @@ A URL shortener with analytics, focused on learning modern software engineering 
 |-----------|---------------|-----|
 | Package Manager | **pnpm** | Fast, disk-efficient, strict |
 | Build Tool | **Vite** | Fast, modern, excellent DX |
-| Language | **TypeScript** | Type safety, better refactoring |
+| Language | **JavaScript** | Simpler setup, faster iteration |
 | Data Fetching | **TanStack Query** | Caching, loading states, mutations |
 | Routing | **React Router v6** | Standard, feature-rich |
 | Styling | **Tailwind CSS** | Utility-first, rapid prototyping |
@@ -126,7 +126,7 @@ brevy/
 │   │   ├── pages/
 │   │   ├── hooks/
 │   │   ├── api/               # API client
-│   │   └── main.tsx
+│   │   └── main.jsx
 │   ├── tests/
 │   ├── package.json
 │   └── Dockerfile
@@ -237,56 +237,56 @@ brevy/
 
 **1.1 Folder Structure**
 
-- [ ] Create `services/api/` directory
-- [ ] Create `services/analytics/` directory
-- [ ] Create `packages/shared/` directory
-- [ ] Create `client/` directory
-- [ ] Create `infra/` directory
-- [ ] Remove existing venv from root
+- [x] Create `services/api/` directory
+- [x] Create `services/analytics/` directory
+- [x] Create `packages/shared/` directory
+- [x] Create `client/` directory
+- [x] Create `infra/` directory
+- [x] Remove existing venv from root (none existed)
 
 **1.2 API Service Setup**
 
-- [ ] Initialize with `uv init` in services/api/
-- [ ] Configure pyproject.toml (dependencies, scripts)
-- [ ] Set up Ruff configuration (ruff.toml)
-- [ ] Set up mypy configuration
-- [ ] Create basic FastAPI app structure (main.py, routers, etc.)
+- [x] Initialize with `uv init` in services/api/
+- [x] Configure pyproject.toml (dependencies, scripts)
+- [x] Set up Ruff configuration (in pyproject.toml)
+- [x] Set up mypy configuration (in pyproject.toml)
+- [x] Create basic FastAPI app structure (main.py, routers, etc.)
 
 **1.3 Analytics Service Setup**
 
-- [ ] Initialize with `uv init` in services/analytics/
-- [ ] Configure pyproject.toml
-- [ ] Set up Ruff + mypy configuration
-- [ ] Create basic FastAPI app structure
+- [x] Initialize with `uv init` in services/analytics/
+- [x] Configure pyproject.toml
+- [x] Set up Ruff + mypy configuration (in pyproject.toml)
+- [x] Create basic FastAPI app structure
 
 **1.4 Shared Package Setup**
 
-- [ ] Initialize shared package with uv
-- [ ] Create shared Pydantic schemas (ClickEvent, etc.)
-- [ ] Configure as local dependency for both services
+- [x] Initialize shared package with uv
+- [x] Create shared Pydantic schemas (ClickEvent, etc.)
+- [x] Configure as local dependency for both services
 
 **1.5 React Client Setup**
 
-- [ ] Initialize with `pnpm create vite` (React + TypeScript)
-- [ ] Install core dependencies (TanStack Query, React Router, Tailwind)
-- [ ] Configure ESLint + Prettier
-- [ ] Set up project structure (pages/, components/, hooks/, api/)
-- [ ] Initialize shadcn/ui
+- [x] Initialize with `pnpm create vite` (React + JavaScript)
+- [x] Install core dependencies (TanStack Query, React Router, Tailwind)
+- [x] Configure ESLint + Prettier
+- [x] Set up project structure (pages/, components/, hooks/, api/)
+- [x] Initialize shadcn/ui
 
 **1.6 Docker & Local Development**
 
-- [ ] Create docker-compose.yml with PostgreSQL, Redis
-- [ ] Create .env.example with required variables
-- [ ] Create .env (gitignored) with local values
-- [ ] Add health checks for containers
-- [ ] Create volumes for data persistence
+- [x] Create docker-compose.yml with PostgreSQL, Redis
+- [x] Create .env.example with required variables
+- [x] Create .env (gitignored) with local values
+- [x] Add health checks for containers
+- [x] Create volumes for data persistence
 
 **1.7 Developer Experience**
 
-- [ ] Create Makefile with common commands
-- [ ] Set up pre-commit hooks (ruff, mypy, eslint, prettier)
-- [ ] Install mkcert and generate local HTTPS certificates
-- [ ] Create README with setup instructions
+- [x] Create Makefile with common commands
+- [x] Set up pre-commit hooks (ruff, mypy, eslint, prettier)
+- [x] Install mkcert and generate local HTTPS certificates
+- [x] Create README with setup instructions
 
 ---
 
@@ -788,7 +788,7 @@ This project will give you hands-on experience with:
 | Category | Topics |
 |----------|--------|
 | **Python Backend** | FastAPI, async/await, SQLAlchemy 2.0, Pydantic, Alembic migrations |
-| **Frontend** | React 18, TypeScript, TanStack Query, React Router, Tailwind, shadcn/ui |
+| **Frontend** | React 18, JavaScript, TanStack Query, React Router, Tailwind, shadcn/ui |
 | **Databases** | PostgreSQL schemas, indexing, JSONB, connection pooling |
 | **Caching** | Redis caching patterns, cache invalidation, Pub/Sub messaging |
 | **Auth** | OAuth 2.0 flow, JWT/sessions, protected routes |

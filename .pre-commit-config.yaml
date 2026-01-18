@@ -1,0 +1,63 @@
+# Pre-commit hooks for Brevy
+# Install: pre-commit install
+# Run manually: pre-commit run --all-files
+
+repos:
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  # Python - Ruff (linting + formatting)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^services/
+      - id: ruff-format
+        files: ^services/
+
+  # Python - Type checking with mypy
+  - repo: local
+    hooks:
+      - id: mypy-api
+        name: mypy (api)
+        entry: bash -c 'cd services/api && uv run mypy .'
+        language: system
+        files: ^services/api/
+        types: [python]
+        pass_filenames: false
+
+      - id: mypy-analytics
+        name: mypy (analytics)
+        entry: bash -c 'cd services/analytics && uv run mypy .'
+        language: system
+        files: ^services/analytics/
+        types: [python]
+        pass_filenames: false
+
+  # JavaScript/React - ESLint + Prettier
+  - repo: local
+    hooks:
+      - id: eslint
+        name: eslint
+        entry: bash -c 'cd client && pnpm lint'
+        language: system
+        files: ^client/.*\.(js|jsx)$
+        pass_filenames: false
+
+      - id: prettier
+        name: prettier
+        entry: bash -c 'cd client && pnpm format'
+        language: system
+        files: ^client/.*\.(js|jsx|json|css|md)$
+        pass_filenames: false
