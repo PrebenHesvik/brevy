@@ -372,45 +372,45 @@ brevy/
 
 **3.1 Service Foundation**
 
-- [ ] Configure SQLAlchemy for analytics schema
-- [ ] Set up Alembic migrations (separate from API)
-- [ ] Create `analytics` schema in PostgreSQL
+- [x] Configure SQLAlchemy for analytics schema
+- [x] Set up Alembic migrations (separate from API)
+- [x] Create `analytics` schema in PostgreSQL
 
 **3.2 Click Event Consumer**
 
-- [ ] Implement Redis Pub/Sub subscriber
-- [ ] Parse incoming click events
-- [ ] Handle malformed events gracefully
+- [x] Implement Redis Pub/Sub subscriber
+- [x] Parse incoming click events
+- [x] Handle malformed events gracefully
 
 **3.3 Click Storage**
 
-- [ ] Create Click SQLAlchemy model
-- [ ] Implement IP → Country/City lookup (GeoIP2 or IP-API)
-- [ ] Store raw click events
-- [ ] Add batch insert for high throughput
+- [x] Create Click SQLAlchemy model
+- [x] Implement IP → Country/City lookup (GeoIP2 or IP-API)
+- [x] Store raw click events
+- [x] Add batch insert for high throughput
 
 **3.4 Aggregation Jobs**
 
-- [ ] Implement hourly aggregation logic
-- [ ] Implement daily aggregation logic
-- [ ] Calculate unique visitors (approximate, IP-based)
-- [ ] Aggregate top referrers, top countries
-- [ ] Schedule aggregation (cron or background task)
+- [x] Implement hourly aggregation logic
+- [x] Implement daily aggregation logic
+- [x] Calculate unique visitors (approximate, IP-based)
+- [x] Aggregate top referrers, top countries
+- [x] Schedule aggregation (cron or background task)
 
 **3.5 Analytics API Endpoints**
 
-- [ ] Implement `GET /analytics/{link_id}/summary` - totals
-- [ ] Implement `GET /analytics/{link_id}/timeseries` - clicks over time
-- [ ] Implement `GET /analytics/{link_id}/referrers` - top referrers
-- [ ] Implement `GET /analytics/{link_id}/countries` - geographic data
-- [ ] Add date range filtering
+- [x] Implement `GET /analytics/{link_id}/summary` - totals
+- [x] Implement `GET /analytics/{link_id}/timeseries` - clicks over time
+- [x] Implement `GET /analytics/{link_id}/referrers` - top referrers
+- [x] Implement `GET /analytics/{link_id}/countries` - geographic data
+- [x] Add date range filtering
 
 **3.6 Observability - Analytics Service**
 
-- [ ] Set up structlog logging
-- [ ] Add OpenTelemetry tracing
-- [ ] Add Prometheus metrics (events processed, latency)
-- [ ] Integrate Sentry
+- [x] Set up structlog logging
+- [x] Add OpenTelemetry tracing
+- [x] Add Prometheus metrics (events processed, latency)
+- [x] Integrate Sentry
 
 ---
 
