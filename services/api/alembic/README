@@ -1,0 +1,21 @@
+Generic single-database configuration with async SQLAlchemy.
+
+This directory contains Alembic migrations for the Brevy API service.
+
+## Commands
+
+Generate a new migration:
+    cd services/api
+    uv run alembic revision --autogenerate -m "description"
+
+Apply all migrations:
+    uv run alembic upgrade head
+
+Revert last migration:
+    uv run alembic downgrade -1
+
+Show current revision:
+    uv run alembic current
+
+Show migration history:
+    uv run alembic history

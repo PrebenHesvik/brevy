@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.router import router as v1_router
 from app.core.config import get_settings
+from app.core.database import close_db
 
 settings = get_settings()
 
@@ -42,6 +43,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     yield
     # Shutdown
     logger.info("Shutting down Brevy API")
+    await close_db()
+    logger.info("Database connections closed")
 
 
 app = FastAPI(

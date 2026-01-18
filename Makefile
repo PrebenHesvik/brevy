@@ -1,4 +1,4 @@
-.PHONY: help install dev dev-api dev-analytics dev-client build test lint format clean docker-up docker-down docker-logs certs
+.PHONY: help install dev dev-api dev-analytics dev-client build test lint format clean docker-up docker-down docker-logs certs db-migrate db-upgrade db-downgrade db-current db-history
 
 # Default target
 help:
@@ -20,6 +20,13 @@ help:
 	@echo "  docker-up      Start PostgreSQL and Redis containers"
 	@echo "  docker-down    Stop and remove containers"
 	@echo "  docker-logs    View container logs"
+	@echo ""
+	@echo "Database:"
+	@echo "  db-upgrade     Apply all pending migrations"
+	@echo "  db-downgrade   Revert last migration"
+	@echo "  db-migrate     Generate new migration (use: make db-migrate m='description')"
+	@echo "  db-current     Show current migration revision"
+	@echo "  db-history     Show migration history"
 	@echo ""
 	@echo "Quality:"
 	@echo "  lint           Run all linters"
@@ -101,6 +108,30 @@ docker-logs:
 docker-clean:
 	@echo "Removing containers and volumes..."
 	docker-compose down -v
+
+# =============================================================================
+# Database
+# =============================================================================
+
+db-upgrade:
+	@echo "Applying database migrations..."
+	cd services/api && uv run alembic upgrade head
+
+db-downgrade:
+	@echo "Reverting last migration..."
+	cd services/api && uv run alembic downgrade -1
+
+db-migrate:
+	@echo "Generating new migration..."
+	cd services/api && uv run alembic revision --autogenerate -m "$(m)"
+
+db-current:
+	@echo "Current migration revision:"
+	cd services/api && uv run alembic current
+
+db-history:
+	@echo "Migration history:"
+	cd services/api && uv run alembic history
 
 # =============================================================================
 # Quality

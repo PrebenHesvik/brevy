@@ -294,10 +294,10 @@ brevy/
 
 **2.1 Database Setup**
 
-- [ ] Configure SQLAlchemy 2.0 with async support
-- [ ] Set up Alembic for migrations
-- [ ] Create database connection pool
-- [ ] Create `api` schema in PostgreSQL
+- [x] Configure SQLAlchemy 2.0 with async support
+- [x] Set up Alembic for migrations
+- [x] Create database connection pool
+- [x] Create `api` schema in PostgreSQL
 
 **2.2 User Model & Auth Foundation**
 
