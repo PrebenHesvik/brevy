@@ -301,10 +301,10 @@ brevy/
 
 **2.2 User Model & Auth Foundation**
 
-- [ ] Create User SQLAlchemy model
-- [ ] Create User Pydantic schemas (UserCreate, UserResponse)
-- [ ] Set up session/JWT token handling
-- [ ] Create auth middleware for protected routes
+- [x] Create User SQLAlchemy model
+- [x] Create User Pydantic schemas (UserCreate, UserResponse)
+- [x] Set up session/JWT token handling
+- [x] Create auth middleware for protected routes
 
 **2.3 OAuth Implementation**
 
